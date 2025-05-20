@@ -20,10 +20,38 @@ fetch('https://fakestoreapi.com/products')
         <h2 class="top20">${product.title}</h2>
         <p class="top50">${product.description}</p>
         <div class="flex top150">
-           <p>${product.price}</p>
+            <p class="marginRight">${product.category}</p>
+           <p>${product.price} €</p>
         <a href="" class="btm w60 top5">Ajouter au panier</a> 
         </div>
     </div>
 </div>`
 
     }
+
+    
+data.forEach(product => {
+    if (product.category == "men's clothing"){
+        
+    document.getElementById("men").innerHTML+=`
+    
+
+       <div class="w60">
+        <img src="${product.image}" alt="t-shirt" class="image">
+    </div>
+    <div class="alignCenter w30">
+        <h2 class="top20">${product.title}</h2>
+        <p class="top50">${product.description}</p>
+        <div class="flex top150">
+            <p class="marginRight">${product.category}</p>
+           <p>${product.price} €</p>
+        <a href="" class="btm w60 top5">Ajouter au panier</a> 
+        </div>
+    </div>
+</div>
+    
+    
+    `
+    }
+    
+});
